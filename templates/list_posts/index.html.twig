@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ListPostsController!{% endblock %}
+
+{% block body %}
+<style>
+
+</style>
+
+<div class="container">
+    <br />
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">UserID</th>
+            <th scope="col">Title</th>
+            <th scope="col">Body</th>
+            <th scope="col">Option</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for post in posts %}
+        <tr>
+            <td scope="row"> {{ post.id }} </td>
+            <td> {{post.userId}} </td>
+            <td> {{post.title}} </td>
+            <td> {{post.body}} </td>
+            <td>
+                <a href="{{path('app_details_posts', { 'userId': post.userId, 'title': post.title, 'body': post.body})}}">
+                    <button type="button" class="btn btn-info">Info</button>
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

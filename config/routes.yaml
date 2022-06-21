@@ -1,0 +1,21 @@
+controllers:
+    resource: ../src/App/Controller/
+    type: annotation
+
+kernel:
+    resource: ../src/App/Kernel.php
+    type: annotation
+
+#Api Routes
+api_find_all_posts:
+    path:       /api/posts/
+    controller: Blog\Posts\Infrastructure\Controller\FindAllPostsController::index
+    methods:    GET
+api_find_id_users:
+    path:       /api/users/{userId}
+    controller: Blog\Users\Infrastructure\Controller\FindUserByIdController::index
+    methods:    GET
+api_create_post:
+    path:       /api/create/posts/
+    controller: Blog\Posts\Infrastructure\Controller\CreatePostController::index
+    methods:    POST

@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello DetailsPostsController!{% endblock %}
+
+{% block body %}
+<style>
+</style>
+
+<div class="container">
+    <br>
+    <div class="card">
+        <div class="card-header">
+            Post info
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">{{ data.post.title }}</h5>
+            <p class="card-text">{{ data.post.body }}</p>
+        </div>
+    </div>
+    <br>
+    <div class="card">
+        <div class="card-header">
+            User info
+        </div>
+        <div class="card-body">
+            <p class="card-text"><b>ID</b>: {{ data.user.userId }}</p>
+            <p class="card-text"><b>Name</b>: {{ data.user.name }}</p>
+            <p class="card-text"><b>UserName</b>: {{ data.user.userName }}</p>
+            <p class="card-text"><b>Email</b>: {{ data.user.email }}</p>
+            <p class="card-text"><b>Phone</b>: {{ data.user.phone }}</p>
+            <p class="card-text"><b>Website:</b> {{ data.user.website }}</p>
+            <hr>
+            <h5>Address</h5>
+            <p class="card-text"><b>Street:</b> {{ data.user.address.street }}</p>
+            <p class="card-text"><b>Suite:</b> {{ data.user.address.suite }}</p>
+            <p class="card-text"><b>City:</b> {{ data.user.address.city }}</p>
+            <p class="card-text"><b>Zipcode:</b> {{ data.user.address.zipcode }}</p>
+            <hr>
+            <h5>Company</h5>
+            <p class="card-text"><b>Name:</b> {{ data.user.company.name }}</p>
+            <p class="card-text"><b>CatchPhrase:</b> {{ data.user.company.catchPhrase }}</p>
+            <p class="card-text"><b>bs:</b> {{ data.user.company.bs }}</p>
+        </div>
+    </div>
+    <br>
+    <br>
+    <a href="{{path('app_list_posts')}}" class="btn btn-info">Back</a>
+</div>
+{% endblock %}
+
